@@ -10,5 +10,5 @@ public interface JobService {
     Job createJob(Job newJob);
     Job updateJobById(Long id, Job updatedJob);
     String getCompanyByJobId(Long id);
-    Job deleteJobById(Long id);
+    boolean deleteJobById(Long id);
 }
