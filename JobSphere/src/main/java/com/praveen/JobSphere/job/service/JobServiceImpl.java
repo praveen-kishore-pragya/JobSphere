@@ -1,7 +1,7 @@
-package com.praveen.JobSphere.service;
+package com.praveen.JobSphere.job.service;
 
-import com.praveen.JobSphere.entity.Job;
-import com.praveen.JobSphere.repository.JobRepository;
+import com.praveen.JobSphere.job.entity.Job;
+import com.praveen.JobSphere.job.repository.JobRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

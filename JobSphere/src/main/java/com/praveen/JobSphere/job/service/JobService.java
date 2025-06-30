@@ -1,6 +1,6 @@
-package com.praveen.JobSphere.service;
+package com.praveen.JobSphere.job.service;
 
-import com.praveen.JobSphere.entity.Job;
+import com.praveen.JobSphere.job.entity.Job;
 
 import java.util.List;
 

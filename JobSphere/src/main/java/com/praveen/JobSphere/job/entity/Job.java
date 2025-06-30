@@ -1,4 +1,4 @@
-package com.praveen.JobSphere.entity;
+package com.praveen.JobSphere.job.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

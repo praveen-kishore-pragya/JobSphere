@@ -1,7 +1,7 @@
-package com.praveen.JobSphere.controller;
+package com.praveen.JobSphere.job.controller;
 
-import com.praveen.JobSphere.entity.Job;
-import com.praveen.JobSphere.service.JobService;
+import com.praveen.JobSphere.job.entity.Job;
+import com.praveen.JobSphere.job.service.JobService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
