@@ -1,5 +1,8 @@
 package com.praveen.JobSphere.job.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.praveen.JobSphere.company.entity.Company;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +11,10 @@ import lombok.Setter;
 @Setter
 @Entity
 //@Table(name = "jobTable")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +24,8 @@ public class Job {
     int minSalary;
     int maxSalary;
     String location;
-    String company;
 
-
+    @ManyToOne
+    @JoinColumn(name = "companyId")
+    private Company company;
 }

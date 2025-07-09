@@ -70,15 +70,15 @@ public class JobController {
     }
 
 
-    @GetMapping("/jobs/getCompanyDetails/{id}")
-    public ResponseEntity<?> getCompanyByJobId(@PathVariable Long id){
-        String companyOfTheEmp = jobService.getCompanyByJobId(id);
-        if(companyOfTheEmp != null){
-            return ResponseEntity.ok(companyOfTheEmp);
-        }
-        else{
-            return ResponseEntity.notFound().build();
-        }
-    }
+//    @GetMapping("/jobs/getCompanyDetails/{id}")
+//    public ResponseEntity<?> getCompanyByJobId(@PathVariable Long id){
+//        String companyOfTheEmp = jobService.getCompanyByJobId(id);
+//        if(companyOfTheEmp != null){
+//            return ResponseEntity.ok(companyOfTheEmp);
+//        }
+//        else{
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
 
 }
