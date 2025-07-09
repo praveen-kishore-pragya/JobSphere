@@ -1,5 +1,7 @@
 package com.praveen.JobSphere.company.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.praveen.JobSphere.job.entity.Job;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -11,6 +13,10 @@ import java.util.List;
 @Setter
 @Entity
 //@Table(name = "companyTable")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 public class Company {
 
     @Id
@@ -19,6 +25,6 @@ public class Company {
     private String name;
     private String description;
 
-    @OneToMany
+    @OneToMany(mappedBy = "company")
     private List<Job> listOfJobs;
 }

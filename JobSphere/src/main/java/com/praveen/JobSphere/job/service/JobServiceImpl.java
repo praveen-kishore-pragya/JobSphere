@@ -44,7 +44,6 @@ public class JobServiceImpl implements JobService{
             currentJob.setMinSalary(updatedJob.getMinSalary());
             currentJob.setMaxSalary(updatedJob.getMaxSalary());
             currentJob.setLocation(updatedJob.getLocation());
-            currentJob.setCompany(updatedJob.getCompany());
 
             return jobRepository.save(currentJob);
         }
@@ -53,16 +52,16 @@ public class JobServiceImpl implements JobService{
 
     }
 
-    @Override
-    public String getCompanyByJobId(Long id) {
-        Optional<Job> current =  jobRepository.findById(id);
-        if(current.isPresent()){
-            return current.get().getCompany();
-        }
-        return null;
-
-        //OR, return current.map(Job::getCompany).orElse(null);
-    }
+//    @Override
+//    public String getCompanyByJobId(Long id) {
+//        Optional<Job> current =  jobRepository.findById(id);
+//        if(current.isPresent()){
+//            return current.get().getCompany();
+//        }
+//        return null;
+//
+//        //OR, return current.map(Job::getCompany).orElse(null);
+//    }
 
     @Override
     public boolean deleteJobById(Long id) {

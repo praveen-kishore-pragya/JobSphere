@@ -29,6 +29,17 @@ public class CompanyController {
         }
     }
 
+    @GetMapping("/companies/{id}")
+    public ResponseEntity<?> getCompanyById(@PathVariable Long id){
+        Company fetchedCompany = companyService.getCompanyById(id);
+        if(fetchedCompany != null){
+            return new ResponseEntity<>(fetchedCompany, HttpStatus.OK);
+        }
+        else{
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @PostMapping("/companies")
     public ResponseEntity<?> createCompany(@RequestBody Company newCompany){
         Company createdCompany = companyService.createCompany(newCompany);
@@ -51,6 +62,17 @@ public class CompanyController {
         }
     }
 
+    @DeleteMapping("/companies/deleteCompany/{id}")
+    public ResponseEntity<?> deleteCompanyById(@PathVariable Long id){
+        boolean isCompanyDeleted = companyService.deleteJobById(id);
+        if(isCompanyDeleted){
+            return ResponseEntity.noContent().build();
+        }
+        else {
+            return ResponseEntity.notFound().build();
+        }
+
+    }
 
 
 }
