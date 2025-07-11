@@ -3,6 +3,7 @@ package com.praveen.JobSphere.company.entity;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.praveen.JobSphere.job.entity.Job;
+import com.praveen.JobSphere.review.entity.Review;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +19,6 @@ import java.util.List;
         property = "id"
 )
 public class Company {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,4 +27,7 @@ public class Company {
 
     @OneToMany(mappedBy = "company")
     private List<Job> listOfJobs;
+
+    @OneToMany(mappedBy = "company")
+    private List<Review> listOfReviews;
 }
